@@ -67,3 +67,16 @@ else
   echo "Backup file doesn't exists"
   exit 1
 fi
+
+# Example output
+
+> Checking if /home/ubuntu/backup/date_20260316 directory exists
+> Creating backup directory: /home/ubuntu/backup/date_20260316
+
+> Checking if Space is available
+> Disk Space exists
+> Database found, Starting backup.
+> Small file found
+> Backup of Database Complete
+> Checking if backuped file exists
+> Backup file exists
