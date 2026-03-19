@@ -2,7 +2,7 @@
 
 # simple script to go through app logs and pull out some useful info
 # mainly for practice - using grep/awk/sed/uniq on microservice logs
-# logs path  : /home/user/app_logs/
+# logs path  : /home/user/app_logs/    # added sample logs in the last for referance
 # output path: /home/user/output/
 
 
