@@ -2,7 +2,7 @@
 
 # This script is used to create a config file for a service.
 # It takes service name and port as input and writes them into a .conf file. 
-# (e.g., service name: web-app or database and port: 8080 or 3306)
+# Example: service name: database and port: 3306)
 
 # Validate number of arguments
 if [ $# -ne 2 ]; then
@@ -23,3 +23,6 @@ port=$2
 
 # Print success message
 echo "Config generated for $service_name"
+
+# Example
+./script.sh database 3306
