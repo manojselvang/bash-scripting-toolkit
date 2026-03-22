@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Directory containing log files
+# Renames .log files and handles other files using else condition
+
 LOG_DIR="/home/user/log_archiver/logs"
 
 # Check if directory exists
@@ -9,13 +10,20 @@ if [[ ! -d "$LOG_DIR" ]]; then
     exit 1
 fi
 
-# Loop through all .log files
-for file in "$LOG_DIR"/*.log; do
-    # Check if at least one .log file exists
-    [[ -e "$file" ]] || { echo "No .log files found"; exit 0; }
+# Loop through all files
+for file in "$LOG_DIR"/*; do
 
-    # Rename file by appending .old
-    mv "$file" "$file.old"
+    if [[ -e "$file" ]]; then
 
-    echo "Renamed: $file -> $file.old"
+        # If file is .log
+        if [[ "$file" == *.log ]]; then
+            mv "$file" "$file.old"
+            echo "Renamed: $file -> $file.old"
+
+        else
+            echo "Skipped (not a .log file): $file"
+        fi
+
+    fi
+
 done
