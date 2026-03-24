@@ -13,3 +13,9 @@ do
     echo "[CLOSED] Port $port"            # If closed
   fi
 done
+
+Use netcat (nc) to check if the port is open
+  # -z : Zero-I/O mode (scan only, no data sent)
+  # -v : Verbose output (shows success/failure)
+  # -w1: Wait 1 second before timing out (faster scanning)
+  # 2>/dev/null : Suppress error messages (clean output)
