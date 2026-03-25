@@ -1,20 +1,18 @@
 #!/bin/bash
 
-# Simple port scanner using nc to check ports 1–1024 on a target IP
+# Simple port scanner using nc (Netcat) to check ports 1–1024 on a target IP
 
-TARGET="192.168.1.10"   # Target IP
+TARGET="10.0.0.5"   # Target IP
 
-for port in {1..1024}   # Loop through ports
-do
-  		if nc -zvw1 $TARGET $port 2>/dev/null   # Check port
-  		then
-    echo "[OPEN]  Port $port"             # If open
+for port in {1..1024}; do   # Loop through ports
+  if nc -zvw1 $TARGET $port 2>/dev/null; then   # Check port
+    		echo "[OPEN]  Port $port"             # If port is open
   else
-    echo "[CLOSED] Port $port"            # If closed
+					echo "[CLOSED] Port $port"            # If closed
   fi
 done
 
-Use netcat (nc) to check if the port is open
+# Flags of Netcat used
   # -z : Zero-I/O mode (scan only, no data sent)
   # -v : Verbose output (shows success/failure)
   # -w1: Wait 1 second before timing out (faster scanning)
