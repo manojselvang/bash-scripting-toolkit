@@ -2,45 +2,57 @@
 
 ## Basic
 
-netstat
+netstat                     # show active connections
 
-## Listening ports
+## Listening Ports
 
-netstat -l
-netstat -ln
-netstat -lpn
+netstat -l                  # show listening ports
+netstat -ln                 # listening ports (no DNS)
+netstat -lpn                # listening + process info
 
 ## TCP / UDP
 
-netstat -t
-netstat -u
-netstat -tu
+netstat -t                  # TCP connections
+netstat -u                  # UDP connections
+netstat -tu                 # TCP + UDP
 
-## Most widely used
+## Most Used
 
-netstat -tulnp
+netstat -tulnp              # all listening ports with process
 
-## Established connections
+## Established Connections
 
-netstat -an | grep ESTABLISHED
+netstat -an | grep ESTABLISHED   # active established connections
+
+## By Port
+
+netstat -tulnp | grep :80        # filter by port
+
+## By Process
+
+netstat -tulnp | grep nginx      # filter by process
 
 ## Routing
 
-netstat -r
+netstat -r                  # routing table
 
 ## Interfaces
 
-netstat -i
+netstat -i                  # network interfaces
+
+## Statistics
+
+netstat -s                  # protocol statistics
 
 ## Continuous
 
-netstat -c
+netstat -c                  # live monitoring
 
 ---
 
-## note
+## Note
 
 `netstat` is deprecated on most modern systems
 
-use:
+Use:
 ss -tulnp
