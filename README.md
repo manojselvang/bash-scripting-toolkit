@@ -23,5 +23,5 @@ This repo reflects consistent learning, real command usage, and clear documentat
 
 
 ---
-y, but suggestions and improvements are welcome.
+Any suggestions and improvements are welcome.
 
