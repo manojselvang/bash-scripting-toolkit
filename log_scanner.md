@@ -1,8 +1,3 @@
-Here’s your script converted into a clean GitHub-ready Markdown (.md) format 👇
-
-
----
-
 # 🔍 Investigate Script (Forensic Log Scanner)
 
 ## 📌 Objective
@@ -123,10 +118,3 @@ Preservation of original logs for system integrity
 
 
 ---
-
-If you want, I can also add:
-- 🔐 SHA256 hashing section  
-- 📄 Logging output (who ran, when, what files found)  
-- 🧪 Test cases for GitHub README  
-
-Just tell me 👍
