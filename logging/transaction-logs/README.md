@@ -1,98 +1,102 @@
-Transaction Audit Log Script (Bash)
-📌 Overview
+# Transaction Audit Log Script (Bash)
+
+## 📌 Overview
+
 This script generates a structured audit log entry containing:
 
-Timestamp
-Username
-Server name
-Transaction fee
+* Timestamp
+* Username
+* Server name
+* Transaction fee
 
 It is useful for:
 
-Logging user activity
-Auditing operations
-Debugging scripts
+* Logging user activity
+* Auditing operations
+* Debugging scripts
 
+---
 
-🧠 Workflow
+## 🧠 Workflow
 
-Define variables
-Fetch system information
-Construct log entry
-Print output
+1. Define variables
+2. Fetch system information
+3. Construct log entry
+4. Print output
 
+---
 
-📜 Script
+## 📜 Script
+
+```bash
 ./transaction-log.sh
+```
 
+---
 
-▶️ Usage
+## ▶️ Usage
+
+```bash
 bash transaction-log.sh
+```
 
+---
 
-📤 Example Output
+## 📤 Example Output
+
+```bash
 [Mon Mar 30 13:45:00 IST 2026] User: manoj | Server: prod-db-01 | Fee: $0.05
+```
 
+---
 
-🔑 Key Concepts Used
+## 🔑 Key Concepts Used
 
+| Concept              | Explanation                 |
+| -------------------- | --------------------------- |
+| variables            | Store reusable values       |
+| command substitution | `$(command)` execution      |
+| string formatting    | Structured log construction |
+| echo                 | Output display              |
 
+---
 
-Concept
-Explanation
+## ⚙️ Script Logic Breakdown
 
+### 1. Variable Definition
 
+* `SERVER_NAME` → static identifier
+* `TRANSACTION_FEE` → stored as string (preserves `$`)
 
+### 2. Command Substitution
 
-variables
-Store reusable values
+* `$(date)` → current timestamp
+* `$(whoami)` → current user
 
+### 3. Log Construction
 
-command substitution
-$(command) execution
+* Combines static and dynamic values
+* Uses `${VAR}` for clarity
 
+### 4. Output
 
-string formatting
-Structured log construction
+* Prints final structured log line
 
+---
 
-echo
-Output display
+## ⚠️ Notes
 
+* Uses system time (`date`)
+* Output is printed to terminal (not saved)
+* Can be extended to log files
 
+---
 
+## 📁 Folder Structure
 
-⚙️ Script Logic Breakdown
-1. Variable Definition
-
-SERVER_NAME → static identifier
-TRANSACTION_FEE → stored as string (preserves $)
-
-2. Command Substitution
-
-$(date) → current timestamp
-$(whoami) → current user
-
-3. Log Construction
-
-Combines static and dynamic values
-Uses ${VAR} for clarity
-
-4. Output
-
-Prints final structured log line
-
-
-⚠️ Notes
-
-Uses system time (date)
-Output is printed to terminal (not saved)
-Can be extended to log files
-
-
-📁 Folder Structure
+```bash
 logging/
   transaction-logs/
     transaction-log.sh
     README.md
-
+```
